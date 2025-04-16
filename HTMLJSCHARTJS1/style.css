@@ -1,0 +1,109 @@
+/* ✅ Reset general y tipografía */
+* {
+  margin: 0;                             /* Elimina márgenes por defecto */
+  padding: 0;                            /* Elimina relleno por defecto */
+  box-sizing: border-box;               /* Incluye padding y border dentro del ancho/alto */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y clara */
+}
+
+/* ✅ Estilos generales del cuerpo */
+body {
+  background-color: #f9fafb;            /* Fondo gris claro suave */
+  color: #333;                           /* Texto gris oscuro */
+  line-height: 1.6;                      /* Espaciado entre líneas para facilitar lectura */
+}
+
+/* ✅ Encabezado principal */
+header {
+  background-color: #0f172a;            /* Azul oscuro profesional */
+  color: white;                          /* Texto blanco */
+  padding: 2rem;                         /* Espacio interno amplio */
+  text-align: center;                    /* Centrado horizontal del texto */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave debajo del header */
+}
+
+/* ✅ Barra de navegación */
+nav {
+  background-color: #1e3a8a;            /* Azul medio para destacar la nav */
+  padding: 1rem;                         /* Espacio interno */
+}
+
+nav ul {
+  list-style: none;                     /* Quita los punticos de lista */
+  display: flex;                        /* Acomoda los enlaces en línea horizontal */
+  flex-wrap: wrap;                      /* Permite que los ítems se acomoden si no caben */
+  justify-content: center;             /* Centra los enlaces horizontalmente */
+  gap: 1.5rem;                           /* Espacio entre enlaces */
+}
+
+nav a {
+  color: white;                          /* Color del texto de los enlaces */
+  text-decoration: none;                /* Quita el subrayado */
+  font-weight: bold;                    /* Texto en negrita */
+  transition: color 0.3s;               /* Transición suave al cambiar de color */
+}
+
+nav a:hover {
+  color: #facc15;                       /* Color amarillo al pasar el mouse */
+}
+
+/* ✅ Distribución general del contenido */
+main {
+  display: grid;                        /* Usa grid layout */
+  grid-template-columns: 1fr 3fr;       /* Aside (1 parte) + contenido principal (3 partes) */
+  gap: 2rem;                             /* Espacio entre columnas */
+  padding: 2rem;                         /* Margen interno */
+}
+
+/* ✅ Aside: barra lateral */
+aside {
+  background-image: url('images/articles-237604_foto_marquesina.png');
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  background-color: #e0f2fe;            /* Azul claro, fondo suave */
+  padding: 1rem;                         /* Espacio interno */
+  border-radius: 10px;                  /* Esquinas redondeadas */
+}
+
+/* ✅ Cada sección o tarjeta de contenido */
+section > div {
+  background-color: white;              /* Fondo blanco para resaltar sobre el fondo gris */
+  padding: 2rem;                         /* Espacio interno cómodo */
+  margin-bottom: 2rem;                  /* Separación entre tarjetas */
+  border-radius: 10px;                  /* Esquinas redondeadas */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);/* Sombra ligera para dar profundidad */
+}
+
+/* ✅ Títulos */
+h2 {
+  color: #1e293b;                       /* Azul grisáceo profesional */
+  margin-bottom: 1rem;                  /* Espacio debajo del título */
+}
+
+/* ✅ Pie de página */
+footer {
+  background-color: #0f172a;            /* Igual que el header */
+  color: white;                          /* Texto blanco */
+  text-align: center;                    /* Texto centrado */
+  padding: 1rem;                         /* Espacio interno */
+  margin-top: 2rem;                      /* Separación con el contenido principal */
+}
+
+/* ✅ Diseño responsive para móviles */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;         /* Todo se vuelve una columna */
+  }
+
+  nav ul {
+    flex-direction: column;             /* Los enlaces se apilan verticalmente */
+    align-items: center;                /* Centrado de los ítems */
+  }
+}
