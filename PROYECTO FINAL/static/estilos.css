@@ -225,6 +225,14 @@ body {
     font-size: 1.5rem;
 }
 
+.imagen-testimonios {
+  display: block; /* Convierte la imagen en un elemento de bloque */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%; /* La imagen no será más ancha que su contenedor padre */
+  height: auto;
+}
+
 @media (max-width: 768px){
   .carousel-item img{
       height: 200px;
