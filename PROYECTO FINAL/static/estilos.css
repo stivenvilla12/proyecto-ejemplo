@@ -1,0 +1,226 @@
+/* === ESTILO GENERAL DE FONDO === */
+body {
+    background-color: #cfcfcf;
+  }
+
+/*body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: 
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG'),
+        url('../imagenes/Un_logo_moderno_-removebg-preview.PNG');
+    background-repeat: no-repeat;
+    background-position: 
+        5% 10%,
+        15% 70%,
+        25% 30%,
+        35% 80%,
+        45% 40%,
+        55% 90%,
+        65% 20%,
+        75% 60%,
+        85% 15%,
+        95% 50%,
+        10% 85%,
+        30% 55%,
+        50% 25%,
+        70% 45%,
+        90% 75%;
+    background-size: 80px;
+    opacity: 0.25;
+    filter: grayscale(100%);
+}*/
+
+.fondo-logo {
+    position: fixed;
+    opacity: 0.50;
+    filter: grayscale(100%);
+    z-index: -1;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+  }
+  
+  
+  /* === HEADER (Encabezado) === */
+  /*
+  header {
+    background-color: rgb(121, 120, 120); /* Fondo gris oscuro */
+  /* }
+  */
+  
+  /* === SECCIÓN "NOSOTROS" === */
+  .nosotros {
+    text-align: justify;       /* Justifica el texto para alinear ambos lados */
+    line-height: 2em;          /* Mejora la legibilidad aumentando la altura de línea */
+  }
+  
+  /* === IMÁGENES DEL CARRUSEL === */
+  .carousel-item img {
+    width: 100%;               /* La imagen ocupa todo el ancho del contenedor */
+    height: 40vh;              /* Alto relativo al 40% de la pantalla visible */
+    object-fit: cover;         /* Escala la imagen sin deformarla */
+    object-position: center;   /* Centra el área visible de la imagen */
+    border-radius: 12px;       /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    transition: transform 0.4s ease; /* Animación suave al hacer hover */
+  }
+  
+  /* Efecto de zoom al pasar el mouse sobre la imagen del carrusel */
+  .carousel-item img:hover {
+    transform: scale(1.02);    /* Aumenta el tamaño un 2% */
+  }
+  
+  /* === ADAPTACIÓN A PANTALLAS PEQUEÑAS === */
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 200px;           /* Menor altura en dispositivos pequeños */
+    }
+  }
+  
+  /* === NAVBAR (BARRA DE NAVEGACIÓN) === */
+  .navbar {
+    background-color: #cfcfcf;
+    /*box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra más notable */
+  }
+  
+  .navbar-brand,
+  .nav-link {
+    color: #333 !important;
+    font-weight: 500;
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #FF6700 !important; /* Naranja intenso para el activo */
+    font-weight: bold;
+  }
+  
+  /* === ESTILO DE NAV PILLS === */
+  .nav-pills .nav-link {
+    color: #007BFF;
+    background-color: #ffffff;
+    border: 1px solid #007BFF;
+    margin: 5px;
+    transition: all 0.3s;
+  }
+  
+  .nav-pills .nav-link:hover {
+    background-color: #e6f0ff;
+    color: #0056b3;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #FF6700;
+    color: white !important;
+    border-color: #FF6700;
+  }
+  
+  /* === CONTENIDO DE CADA SECCIÓN === */
+  .tab-pane {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    margin-top: 1rem;
+  }
+  
+  h2 {
+    color: #0056b3;
+    font-weight: 700;
+  }
+
+  a {
+    color: #0056b3;
+  }
+  
+  /* === CONTADOR === */
+  #contador {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007BFF;
+  }
+  
+  /* === BOTONES === */
+  .btn-primary {
+    background-color: #FF6700;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #e65c00;
+  }
+  
+  /* === FOOTER === */
+  .footer {
+    background-color: #f1f1f1;
+    border-top: 2px solid #FF6700;
+    color: #333;
+  }
+  
+  .footer .text-muted {
+    font-weight: 500;
+    color: #555 !important;
+  }
+  
+  .footer-link {
+    color: #FFA500;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+    color: #007BFF;
+  }
+  
+  .footer-icon {
+    color: #FFA500;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-icon:hover {
+    color: #007BFF;
+  }
+  
+  .btn-primary {
+    background-color: #FF6700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-primary:hover {
+    background-color: #e65c00;
+    transform: scale(1.07);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  }
+  
+  .titulo-proyecto {
+    color: #00356e; /* Cambia este color por el que prefieras */
+    font-weight: bold;
+    font-size: 1.5rem;
+}

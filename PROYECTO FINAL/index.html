@@ -1,0 +1,289 @@
+<!--iNCLUYE LOS ARCHIVOS CSS Y JS DE BOOTSTRAP-->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EJEMPRENDE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./static/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="./imagenes/Un_logo_moderno_-removebg-preview.PNG" type="image/png">
+
+  </head>
+  <body>
+    <header>
+        <div class="container"><!--Acà insertamos el còdigo navnar de bootstrap-->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="./imagenes/Un_logo_moderno_-removebg-preview.PNG" alt="Logo" width="60" height="40" class="me-2">
+                    <span class="titulo-proyecto">EJEMPRENDE</span>
+                </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Ruta del Emprendedor</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Red Emprende</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Servicios
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Servicio1</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Servicio2</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Servicio3</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </header>
+    <!--Carrusel de fotos.-->
+    <section class="carrusel">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./imagenes/0fcf5278500203.5ca6518eb61f8.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>SALENTO, QUINDIO</h5>
+                  <p>by: Andrea Salamanca</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/543a3868893325.5b6cc37a879c5.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>FILANDIA, QUINDIO</h5>
+                  <p>by: Julio César Sandoval Bernal.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/EL-PEREIRANO-WEB37-2.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>PEREIRA, RISARALDA</h5>
+                  <p>by: el pereirano</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/cual-es-la-mejor-epoca-para-ir-al-eje-cafetero-1024x768.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>EJECAFETERO COLOMBIANO</h5>
+                  <p>by: El Tiempo</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/marsella-turismo-yuo-min.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>MARSELLA, RISARALDA</h5>
+                  <p>by: colombiabacana.com</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+    </section>
+    <!-- con la clase nosotros.-->
+    <!--<section class="nosotros my-5">
+        <h2 class="text-center my-5">DESCRIPCIÓN</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius eaque accusamus quaerat a beatae nemo, quasi illo, inventore nostrum, magnam maxime totam ullam! Excepturi dicta laborum assumenda omnis doloribus sint.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, autem debitis quod vitae sint doloribus officiis atque repellat iure, alias ex laudantium. Accusamus assumenda delectus deleniti dolores iste adipisci atque.</p>
+                </div>
+                <div class="col-6">
+                    <img class="img-fluid" src="https://picsum.photos/id/800/600/300" alt="">
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <section class="informacion my-5">
+      <!--<h2 class="text-center my-5">INFORMACIÓN SOBRE EMPRENDIMIENTO</h2>
+      <div class="container">
+        <!-Pestañas -->
+        <ul class="nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-descripcion-tab" data-bs-toggle="pill" href="#pills-descripcion" role="tab" aria-controls="pills-descripcion" aria-selected="true">Descripción</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-definiciones-tab" data-bs-toggle="pill" href="#pills-definiciones" role="tab" aria-controls="pills-definiciones" aria-selected="false">Definiciones</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-porque-tab" data-bs-toggle="pill" href="#pills-porque" role="tab" aria-controls="pills-porque" aria-selected="false">Por qué emprender</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-contador-tab" data-bs-toggle="pill" href="#pills-contador" role="tab" aria-controls="pills-contador" aria-selected="false">Contador de Emprendimientos</a>
+          </li>
+        </ul>
+    
+        <div class="tab-content" id="pills-tabContent">
+    
+          <!-- Descripción -->
+          <div class="tab-pane fade show active" id="pills-descripcion" role="tabpanel" aria-labelledby="pills-descripcion-tab">
+            <div class="row align-items-center mt-4">
+              <div class="col-md-6">
+                <p>🌟 <strong>¡Ejemprende!</strong> El espacio donde los sueños del Eje Cafetero se hacen visibles 🚀</p>
+                <p>Bienvenido a <strong>Ejemprende</strong>, la plataforma que nace para <strong>impulsar, visibilizar y conectar</strong> los emprendimientos del corazón del Eje Cafetero colombiano.</p>
+                <p>Celebramos las ideas que nacen en nuestras montañas, los negocios con alma cafetera y el esfuerzo de quienes cada día trabajan por hacer realidad sus proyectos.</p>
+                <p>🌿 Porque en el Eje no solo cultivamos café… <em>cultivamos ideas, esfuerzo y progreso</em>.</p>
+                <p>📢 ¡Conoce, apoya y comparte los emprendimientos de tu región!</p>
+                <p>💼 Si eres emprendedor, este es tu escenario. Si sueñas con serlo, este es tu punto de partida.</p>
+              </div>
+              <div class="col-md-6 text-center">
+                <img src="./imagenes/IMAGEN-1.JPEG" alt="Descripción" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+    
+          <!-- Definiciones -->
+          <div class="tab-pane fade" id="pills-definiciones" role="tabpanel" aria-labelledby="pills-definiciones-tab">
+            <div class="row align-items-center mt-4">
+              <div class="col-md-6">
+                <p>🌟 <strong>Emprendimiento:</strong> Actividad o proyecto que una persona inicia con el objetivo de generar ingresos o beneficios. Puede ser un negocio o iniciativa que requiere esfuerzo, dedicación y asumir riesgos 🚀</p>
+                <p>💡 <strong>Innovación:</strong> Creación o mejora de productos, servicios o modelos que ofrecen nuevas soluciones. Puede ser incremental 🔧 o disruptiva 💥.</p>
+                <p>🚀 <strong>Startup:</strong> Empresa joven que busca escalar rápidamente, con innovación, flexibilidad y potencial de crecimiento disruptivo 🔝</p>
+              </div>
+              <div class="col-md-6 text-center">
+                <img src="./imagenes/IMAGEN-2.JPEG" alt="Definiciones" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+    
+          <!-- Por qué emprender -->
+          <div class="tab-pane fade" id="pills-porque" role="tabpanel" aria-labelledby="pills-porque-tab">
+            <div class="row align-items-center mt-4">
+              <div class="col-md-6">
+                <h3>¿Por qué emprender?</h3>
+                <P>🌄
+                  <strong>Porque esta tierra tiene todo para florecer:</strong> talento, creatividad, cultura rica y una comunidad que valora profundamente lo hecho con pasión. Emprender aquí significa aprovechar la riqueza que nos rodea, desde las montañas majestuosas hasta los cafetales que pintan nuestros paisajes con historias.
+                  </P>
+                <P>
+                  Desde sus ciudades vibrantes llenas de oportunidades hasta sus pueblos encantadores 🏘️ donde las tradiciones se mezclan con nuevas ideas, <strong>nuestra región es un lugar único.</strong> Aquí, las personas tienen visión y ganas de transformar su entorno, construyendo un futuro lleno de esperanza
+                </P>
+                <P>
+                  💪 Emprender no solo es crear un proyecto, sino también sembrar raíces fuertesque conecten con nuestra identidad cultural y cultivar alas grandes para volar hacia nuevas oportunidades. Cada paso dado refleja el espíritu innovador de aquellos que creen en el poder de transformar sueños en realidades.
+                </P>
+              </div>
+              <div class="col-md-6 text-center">
+                <img src="./imagenes/IMAGEN-3.JPG" alt="Por qué emprender" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+    
+          <!-- Contador -->
+          <div class="tab-pane fade" id="pills-contador" role="tabpanel" aria-labelledby="pills-contador-tab">
+            <div class="text-center my-4">
+              <h3>Contador de Emprendimientos</h3>
+              <p id="contador" class="fs-1">0</p>
+              <button class="btn btn-primary" onclick="incrementarContador()">Incrementar Contador</button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+    <!--este es el contador para enlazar con el reguistro-->
+    <script>
+      let contador = 0;
+      function incrementarContador() {
+        contador++;
+        document.getElementById("contador").innerText = contador;
+      }
+    </script>
+    <footer class="footer bg-dark text-white pt-4 pb-2 mt-5">
+      <div class="container text-center">
+        <!-- Mapa del sitio -->
+        <div class="mb-3">
+          <a href="#" class="footer-link">Inicio</a> |
+          <a href="#" class="footer-link">Nosotros</a> |
+          <a href="#" class="footer-link">Servicios</a> |
+          <a href="#" class="footer-link">Contacto</a>
+        </div>
+    
+        <!-- Redes sociales -->
+        <div class="mb-3">
+          <a href="#" target="_blank" class="footer-icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" target="_blank" class="footer-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" target="_blank" class="footer-icon"><i class="bi bi-youtube"></i></a>
+        </div>
+    
+        <!-- Contacto -->
+        <p>Contáctanos: <a href="mailto:info@ejemprende.com" class="text-white">info@ejemprende.com</a></p>
+    
+        <!-- Derechos -->
+        <p class="mb-0">&copy; 2025 EJEMPRENDE. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // Duración de la animación en milisegundos
+        once: true,     // Se ejecuta solo una vez
+      });
+    </script>
+    <script>
+      const cantidadDeLogos = 35; // Cambia este número para más o menos logos
+      const contenedor = document.body;
+    
+        for (let i = 0; i < cantidadDeLogos; i++) {
+          const logo = document.createElement("img");
+          logo.src = "./imagenes/Un_logo_moderno_-removebg-preview.PNG"; // Cambia al path correcto
+          logo.classList.add("fondo-logo");
+          
+          // Posición aleatoria
+          logo.style.top = Math.random() * 100 + "%";
+          logo.style.left = Math.random() * 100 + "%";
+      
+          // Tamaño aleatorio (entre 40px y 100px)
+          const size = Math.floor(Math.random() * 60) + 40;
+          logo.style.width = size + "px";
+      
+          // Rotación aleatoria
+          const rotacion = Math.floor(Math.random() * 360);
+          logo.style.transform = `rotate(${rotacion}deg)`;
+      
+          contenedor.appendChild(logo);
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  
+
+  </body>
+</html>
