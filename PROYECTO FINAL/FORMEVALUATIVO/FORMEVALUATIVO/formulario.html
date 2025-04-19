@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- Declara que este documento es HTML5 -->
+
+<html lang="es">
+<!-- Indica que el idioma principal del contenido es español -->
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Establece la codificación de caracteres a UTF-8 -->
+
+  <title>Autoevaluación Emprendedor e Innovador</title>
+  <!-- Título que aparecerá en la pestaña del navegador -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Importa la fuente 'Poppins' desde Google Fonts -->
+
+  <style>
+    /* ----- ESTILOS GENERALES DE LA PÁGINA ----- */
+    body {
+      font-family: 'Poppins', sans-serif; /* Fuente del texto */
+      background: linear-gradient(to right, #e0eafc, #cfdef3); /* Fondo degradado */
+      margin: 0; /* Elimina márgenes por defecto */
+      padding: 40px 20px; /* Espaciado interno superior e inferior */
+      display: flex; /* Usa flexbox */
+      justify-content: center; /* Centra el contenido horizontalmente */
+    }
+
+    form {
+      background: #fff; /* Fondo blanco del formulario */
+      padding: 30px; /* Espaciado interno */
+      border-radius: 15px; /* Bordes redondeados */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra externa */
+      max-width: 700px; /* Ancho máximo del formulario */
+      width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    h1 {
+      text-align: center; /* Centra el título */
+      color: #2c3e50; /* Color del texto */
+      margin-bottom: 30px; /* Separación inferior */
+    }
+
+    .question {
+      margin-bottom: 25px; /* Espacio entre preguntas */
+    }
+
+    .question label {
+      display: block; /* Hace que la etiqueta ocupe toda la línea */
+      font-weight: 600; /* Texto en negrita */
+      margin-bottom: 10px; /* Espacio debajo de la pregunta */
+      color: #333; /* Color del texto */
+    }
+
+    .options label {
+      display: block; /* Cada opción ocupa su propia línea */
+      margin-left: 15px; /* Indentación de las opciones */
+      margin-bottom: 6px; /* Espacio entre opciones */
+      cursor: pointer; /* Cambia el cursor al pasar */
+      color: #555; /* Color del texto */
+    }
+
+    input[type="radio"] {
+      margin-right: 10px; /* Espacio entre el botón y el texto */
+    }
+
+    button {
+      display: block; /* El botón es un bloque */
+      margin: 30px auto 10px auto; /* Centrado con márgenes */
+      padding: 12px 40px; /* Tamaño del botón */
+      background-color: #3498db; /* Color azul del botón */
+      color: white; /* Texto blanco */
+      border: none; /* Sin borde */
+      font-size: 16px; /* Tamaño del texto */
+      border-radius: 30px; /* Bordes redondeados */
+      transition: background-color 0.3s ease; /* Transición suave */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra del botón */
+    }
+
+    button:hover {
+      background-color: #2980b9; /* Color al pasar el mouse */
+    }
+
+    #result {
+      text-align: center; /* Centra el texto del resultado */
+      font-size: 18px; /* Tamaño del texto */
+      margin-top: 30px; /* Espacio superior */
+      padding: 20px; /* Espaciado interno */
+      background: #f2f8ff; /* Fondo del resultado */
+      border-left: 5px solid #3498db; /* Barra decorativa azul a la izquierda */
+      border-radius: 10px; /* Bordes redondeados */
+      opacity: 0; /* Oculto por defecto */
+      transform: translateY(20px); /* Posición inicial animada */
+      transition: all 0.4s ease; /* Transición suave */
+    }
+
+    #result.show {
+      opacity: 1; /* Aparece el resultado */
+      transform: translateY(0); /* Se mueve a su lugar */
+    }
+
+    /* Colores para diferentes niveles de resultado */
+    .high { color: #27ae60; } /* Verde para alta puntuación */
+    .medium { color: #f39c12; } /* Naranja para puntuación media */
+    .low { color: #e74c3c; } /* Rojo para puntuación baja */
+  </style>
+</head>
+
+<body>
+  <!-- Formulario de autoevaluación -->
+  <form id="evaluationForm">
+    <h1>Autoevaluación de Emprendedor e Innovador</h1>
+
+    <!-- Pregunta 1 -->
+    <div class="question">
+      <label>1. ¿Eres capaz de asumir riesgos calculados?</label>
+      <div class="options">
+        <label><input type="radio" name="q1" value="3"> Siempre</label>
+        <label><input type="radio" name="q1" value="2"> A veces</label>
+        <label><input type="radio" name="q1" value="1"> Rara vez</label>
+      </div>
+    </div>
+
+    <!-- Pregunta 2 -->
+    <div class="question">
+      <label>2. ¿Buscas constantemente mejorar o innovar en tus ideas?</label>
+      <div class="options">
+        <label><input type="radio" name="q2" value="3"> Siempre</label>
+        <label><input type="radio" name="q2" value="2"> A veces</label>
+        <label><input type="radio" name="q2" value="1"> Rara vez</label>
+      </div>
+    </div>
+
+    <!-- Pregunta 3 -->
+    <div class="question">
+      <label>3. ¿Tienes metas claras a corto, mediano y largo plazo?</label>
+      <div class="options">
+        <label><input type="radio" name="q3" value="3"> Sí</label>
+        <label><input type="radio" name="q3" value="2"> Parcialmente</label>
+        <label><input type="radio" name="q3" value="1"> No</label>
+      </div>
+    </div>
+
+    <!-- Pregunta 4 -->
+    <div class="question">
+      <label>4. ¿Cómo enfrentas los fracasos?</label>
+      <div class="options">
+        <label><input type="radio" name="q4" value="3"> Como aprendizaje</label>
+        <label><input type="radio" name="q4" value="2"> Me cuesta, pero sigo</label>
+        <label><input type="radio" name="q4" value="1"> Me desanimo fácilmente</label>
+      </div>
+    </div>
+
+    <!-- Pregunta 5 -->
+    <div class="question">
+      <label>5. ¿Qué tan bien manejas tu tiempo y recursos?</label>
+      <div class="options">
+        <label><input type="radio" name="q5" value="3"> Muy bien</label>
+        <label><input type="radio" name="q5" value="2"> Aceptable</label>
+        <label><input type="radio" name="q5" value="1"> Mal</label>
+      </div>
+    </div>
+
+    <!-- Botón para evaluar -->
+    <button type="button" onclick="calcularResultado()">Evaluar</button>
+
+    <!-- Contenedor para mostrar el resultado -->
+    <div id="result"></div>
+  </form>
+
+  <!-- Script con la lógica de evaluación -->
+  <script>
+    function calcularResultado() {
+      let total = 0; // Puntuación total inicial
+      const preguntas = 5; // Número total de preguntas
+
+      // Recorremos cada pregunta
+      for (let i = 1; i <= preguntas; i++) {
+        // Obtenemos la respuesta seleccionada de cada pregunta
+        const seleccion = document.querySelector(`input[name="q${i}"]:checked`);
+
+        if (seleccion) {
+          total += parseInt(seleccion.value); // Sumamos el valor elegido
+        } else {
+          alert("Por favor responde todas las preguntas."); // Si falta una, alerta
+          return; // Salimos de la función
+        }
+      }
+
+      const resultado = document.getElementById("result"); // Obtenemos el div del resultado
+      let mensaje = ""; // Texto del mensaje final
+      let clase = ""; // Clase CSS según el resultado
+
+      // Evaluamos según el puntaje total
+      if (total >= 13) {
+        mensaje = "¡Excelente! Tienes un perfil altamente emprendedor e innovador. 💡🚀";
+        clase = "high"; // Alta puntuación
+      } else if (total >= 9) {
+        mensaje = "Vas por buen camino. ¡Sigue desarrollando tus habilidades! 🔧📈";
+        clase = "medium"; // Media puntuación
+      } else {
+        mensaje = "Revisa tus motivaciones y trabaja en tu crecimiento personal. 🌱🧭";
+        clase = "low"; // Baja puntuación
+      }
+
+      // Mostramos el resultado con animación y estilo
+      resultado.className = `show ${clase}`;
+      resultado.innerHTML = `<strong>Puntaje: ${total}/15</strong><br>${mensaje}`;
+    }
+  </script>
+</body>
+</html>

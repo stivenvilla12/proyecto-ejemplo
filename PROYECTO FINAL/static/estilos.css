@@ -52,7 +52,7 @@ body {
 
 .fondo-logo {
     position: fixed;
-    opacity: 0.50;
+    opacity: 0.30;
     filter: grayscale(100%);
     z-index: -1;
     pointer-events: none;
@@ -224,3 +224,26 @@ body {
     font-weight: bold;
     font-size: 1.5rem;
 }
+
+@media (max-width: 768px){
+  .carousel-item img{
+      height: 200px;
+  }
+}
+  
+    
+    /* === ESTILO DE BOTONES EN EL FOOTER === */
+    .footer-button {
+      background-color: #FF6700;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-button:hover {
+      background-color: #e65c00;
+      transform: scale(1.05);
+    }
