@@ -233,6 +233,23 @@ body {
   height: auto;
 }
 
+.recuadro-texto{
+  background-color: rgb(0, 53, 102); /* Color de fondo del recuadro */
+  color: rgb(255, 255, 255);             /* Color del texto (opcional) */
+  border-radius: 10px;       /* Radio de los bordes para redondearlos */
+  padding: 15px;             /* Espacio entre el texto y el borde */
+  margin-bottom: 20px;      /* Espacio debajo del recuadro (opcional) */
+  text-align: justify;       /* Alineación del texto dentro del recuadro (opcional) */
+  transition: transform 0.3s ease-in-out; /* Define la propiedad a animar y la duración */
+}
+
+.recuadro-texto:hover {
+  transform: scale(1.05); /* Escala el elemento al 110% de su tamaño original */
+  background-color: rgb(4, 89, 169); /* Color de fondo del recuadro */
+
+}
+
+
 @media (max-width: 768px){
   .carousel-item img{
       height: 200px;
