@@ -70,3 +70,78 @@ function obtenerClima() {
 }
 
 window.onload = obtenerClima;
+
+const REGISTROS_KEY = 'registrosEmprendimientos'; // Clave para almacenar en localStorage
+
+// Función para guardar los registros en localStorage
+function guardarRegistros(registros) {
+  localStorage.setItem(REGISTROS_KEY, JSON.stringify(registros));
+}
+
+// Función para cargar los registros desde localStorage
+function cargarRegistros() {
+  const registrosString = localStorage.getItem(REGISTROS_KEY);
+  if (registrosString) {
+    return JSON.parse(registrosString);
+  }
+  return []; // Si no hay registros, devuelve un array vacío
+}
+
+// Cargar los registros al cargar la página
+let registrosSimulados = cargarRegistros();
+mostrarRegistrosSimulados(); // Mostrar los registros cargados (si hay)
+
+document.getElementById('registroForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita la recarga de la página
+
+  const nombre = document.getElementById('nombre').value;
+  const email = document.getElementById('email').value;
+  // Recolecta los otros datos del formulario
+
+  const nuevoRegistro = {
+    nombre: nombre,
+    email: email,
+    // Otros datos recolectados
+    fechaRegistro: new Date().toLocaleString()
+  };
+
+  registrosSimulados.push(nuevoRegistro);
+  guardarRegistros(registrosSimulados); // Guardar en localStorage
+
+  // Simula una respuesta exitosa mostrando un mensaje
+  const mensajeRegistro = document.getElementById('mensajeRegistro');
+  mensajeRegistro.textContent = `Registro exitoso para: ${nombre} (${email})`;
+  mensajeRegistro.style.display = 'block';
+
+  console.log("Registros Simulados (localStorage):", registrosSimulados); // Para verificar en la consola
+
+  // Opcional: Limpiar el formulario después del envío simulado
+  document.getElementById('registroForm').reset();
+
+  // Opcional: Actualizar la lista de registros mostrada
+  mostrarRegistrosSimulados();
+});
+
+// Función para mostrar los registros simulados en la página
+function mostrarRegistrosSimulados() {
+  const listaRegistros = document.getElementById('listaDeRegistros');
+  if (listaRegistros) {
+    listaRegistros.innerHTML = '';
+    registrosSimulados.forEach(registro => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `Nombre: ${registro.nombre}, Email: ${registro.email}, Registrado el: ${registro.fechaRegistro}`;
+      listaRegistros.appendChild(listItem);
+    });
+  }
+}
+
+// Opcional: Botón para limpiar los registros de localStorage (para pruebas)
+const limpiarRegistrosBtn = document.getElementById('limpiarRegistros');
+if (limpiarRegistrosBtn) {
+  limpiarRegistrosBtn.addEventListener('click', function() {
+    localStorage.removeItem(REGISTROS_KEY);
+    registrosSimulados = [];
+    mostrarRegistrosSimulados();
+    console.log("localStorage de registros limpiado.");
+  });
+}
