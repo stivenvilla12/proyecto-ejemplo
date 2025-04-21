@@ -225,27 +225,47 @@
           <div class="tab-pane fade" id="pills-registro" role="tabpanel" aria-labelledby="pills-registro-tab">
             <form id="registroForm" class="row g-3"> <!--g GAP - espaciado entre columnas -->
               <!--MD medium(pantalla mediana) en lugar de Label utilizamos placeholder-->
-              <div class="col-md-3"><input class="form-control" placeholder="Identificación" id="identificacion" required></div>
-              <div class="col-md-3"><input class="form-control" placeholder="Nombres" id="nombres" required></div>
-              <div class="col-md-3"><input type="date" class="form-control" id="fecha" required></div>
               <div class="col-md-3">
-                  <select class="form-select" id="genero" required></select> <!-- forma dinamica-->
+                <label for="emprendedor">Tu nombre completo:</label>
+                <input class="form-control" placeholder="Nombres y apellidos" id="emprendedor" required></div>
+              <div class="col-md-3">
+                  <label for="genero">Género:</label>
+                  <select class="form-select" id="genero" required>
                   <option value="masculino">Masculino</option>
                   <option value="femenino">Femenino</option>
                   <option value="otro">Otro</option>
+                  </select>
               </div>
-              <div class="col-md-3">                                
-                  <select id="ciudad" class="form-select" required></select>
+              <div class="col-md-3">
+                <label for="genero">Nombre de tu emprendimiento:</label>
+                <input class="form-control" placeholder="Nombre del emprendimiento" id="emprendimiento" required></div>
+              <div class="col-md-3">
+                <label for="fecha">Fecha de creación:</label>
+                <input type="date" class="form-control" id="fecha" required></div>
+              
+              <div class="col-md-3">
+                <label for="departamento">¿En cuál departamento estás?</label>
+                <select class="form-select" id="departamento" required>
+                <option value="masculino">Risaralda</option>
+                <option value="femenino">Caldas</option>
+                <option value="otro">Quindío</option>
+                </select>
               </div>
       
               <!-- Datos requeridos para llevar al servidor-->
-              <div class="col-md-3"><input id="movil" class="form-control" placeholder="Móvil" required></div>
-              <div class="col-md-3"><input id="mail" type="email" class="form-control" placeholder="Email" required></div>
-              <div class="col-md-3"><input id="salario" type="number" class="form-control" placeholder="Salario" required></div>
+              <div class="col-md-3">
+                <label for="movil">Tu teléfono de contacto</label>
+                <input id="movil" class="form-control" placeholder="Móvil" required></div>
+              <div class="col-md-3">
+                <label for="mail">Correo electrónico</label>
+                <input id="mail" type="email" class="form-control" placeholder="Email" required></div>
+              <div class="col-md-3">
+                <label for="sitioweb">Tu sitio web o linktree</label>
+                <input id="sitioweb" class="form-control" placeholder="Sitio web" required></div>
               
               <!-- Botón para Enviar los datos del formulario a JS y posteriormente al servidor -->
               <div class="col-md-6">
-                  <button class="btn btn-success w-100" type="submit">Guardar</button> <!-- w ancho 100% del div-->
+                  <button class="btn btn-success w-100" type="submit">Enviar registro</button> <!-- w ancho 100% del div-->
               </div>
       
               <!-- botón para limpiar el formulario -->
@@ -254,9 +274,10 @@
               </div>
           </form>
             
-            <h2>Registros Simulados (localStorage)</h2>
+            <div class="tabla-registros">
+            <h1>Empredimientos registrados</h1>
             <ul id="listaDeRegistros"></ul>
-            
+            </div>
             <button id="limpiarRegistros">Limpiar Registros (localStorage)</button>
           
           </div>
@@ -330,9 +351,9 @@
         }
     </script>
     
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="./static/scripts.js"></script> <!-- Enlazando el archivo JavaScript -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="static/scritps.js"></script>
 
   </body>
 </html>

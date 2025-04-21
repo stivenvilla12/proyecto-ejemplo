@@ -318,3 +318,19 @@ body {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
     }
 
+.tabla-registros{
+  background-color: rgb(136, 188, 236); /* Color de fondo del recuadro */
+  color: rgb(255, 255, 255);             /* Color del texto (opcional) */
+  border-radius: 10px;       /* Radio de los bordes para redondearlos */
+  padding: 15px;             /* Espacio entre el texto y el borde */
+  margin-top: 20px;
+  margin-bottom: 20px;      /* Espacio debajo del recuadro (opcional) */
+  text-align: justify;       /* Alineación del texto dentro del recuadro (opcional) */
+  transition: transform 0.3s ease-in-out; /* Define la propiedad a animar y la duración */
+}
+
+.tabla-registros:hover {
+  transform: scale(1.05); /* Escala el elemento al 110% de su tamaño original */
+  background-color: rgb(4, 89, 169); /* Color de fondo del recuadro */
+
+}

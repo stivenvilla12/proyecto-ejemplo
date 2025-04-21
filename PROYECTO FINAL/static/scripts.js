@@ -33,7 +33,7 @@ for (let i = 0; i < cantidadDeLogos; i++) {
   contenedor.appendChild(logo);
 }
 
-
+// clima
 function obtenerClima() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (posicion) {
@@ -94,13 +94,25 @@ mostrarRegistrosSimulados(); // Mostrar los registros cargados (si hay)
 document.getElementById('registroForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Evita la recarga de la página
 
-  const nombre = document.getElementById('nombre').value;
-  const email = document.getElementById('email').value;
+  const emprendedor = document.getElementById('emprendedor').value;
+  const genero = document.getElementById('genero').value;
+  const emprendimiento = document.getElementById('emprendimiento').value;
+  const fecha = document.getElementById('fecha').value;
+  const departamento = document.getElementById('departamento').value;
+  const movil = document.getElementById('movil').value;
+  const mail = document.getElementById('mail').value;
+  const sitioWeb = document.getElementById('sitioWeb').value;
   // Recolecta los otros datos del formulario
 
   const nuevoRegistro = {
-    nombre: nombre,
-    email: email,
+    emprendedor: emprendedor,
+    genero: genero,
+    emprendimiento: emprendimiento,
+    fecha: fecha,
+    departamento: departamento,
+    movil: movil,
+    mail: mail,
+    sitioWeb: sitioWeb,
     // Otros datos recolectados
     fechaRegistro: new Date().toLocaleString()
   };
@@ -110,7 +122,7 @@ document.getElementById('registroForm').addEventListener('submit', function(even
 
   // Simula una respuesta exitosa mostrando un mensaje
   const mensajeRegistro = document.getElementById('mensajeRegistro');
-  mensajeRegistro.textContent = `Registro exitoso para: ${nombre} (${email})`;
+  mensajeRegistro.textContent = `Registro exitoso para: ${emprendedor} (${emprendimiento})`;
   mensajeRegistro.style.display = 'block';
 
   console.log("Registros Simulados (localStorage):", registrosSimulados); // Para verificar en la consola
@@ -129,7 +141,7 @@ function mostrarRegistrosSimulados() {
     listaRegistros.innerHTML = '';
     registrosSimulados.forEach(registro => {
       const listItem = document.createElement('li');
-      listItem.textContent = `Nombre: ${registro.nombre}, Email: ${registro.email}, Registrado el: ${registro.fechaRegistro}`;
+      listItem.textContent = `Emprendedor/a: ${registro.emprendedor}, Emprendimiento: ${registro.emprendimiento}, Departamento: ${registro.departamento}, Contacto: ${registro.movil}, Sitio web: ${registro.sitioWeb} ,Registrado el: ${registro.fechaRegistro}`;
       listaRegistros.appendChild(listItem);
     });
   }
@@ -145,3 +157,6 @@ if (limpiarRegistrosBtn) {
     console.log("localStorage de registros limpiado.");
   });
 }
+
+// Log para verificar los registros almacenados en localStorage
+console.log(JSON.parse(localStorage.getItem('registrosEmprendimientos')));
