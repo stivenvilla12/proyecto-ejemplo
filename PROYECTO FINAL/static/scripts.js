@@ -106,6 +106,7 @@ function cargarRegistros() {
 // Cargar los registros al cargar la página
 let registrosSimulados = cargarRegistros();
 mostrarRegistrosSimulados(); // Mostrar los registros cargados (si hay)
+actualizarContador();
 
 document.getElementById('registroForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Evita la recarga de la página
@@ -142,6 +143,7 @@ document.getElementById('registroForm').addEventListener('submit', function(even
 
   // Opcional: Actualizar la lista de registros mostrada
   mostrarRegistrosSimulados();
+  actualizarContador();
 });
 
 // Función para mostrar los registros simulados en la página
@@ -167,6 +169,135 @@ if (limpiarRegistrosBtn) {
     localStorage.removeItem(REGISTROS_KEY);
     registrosSimulados = [];
     mostrarRegistrosSimulados();
+    actualizarContador();
     console.log("localStorage de registros limpiado.");
   });
+<<<<<<< HEAD
 }
+=======
+}
+
+function mostrarGraficaPastel() {
+  const canvas = document.getElementById('graficaPastel');
+  if (!canvas) return;
+
+  const conteo = {};
+  registrosSimulados.forEach(r => {
+    conteo[r.departamento] = (conteo[r.departamento] || 0) + 1;
+  });
+
+  const labels = Object.keys(conteo);
+  const datos = Object.values(conteo);
+
+  if (graficoPastel) graficoPastel.destroy();
+
+  graficoPastel = new Chart(canvas, {
+    type: 'pie',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: datos,
+        backgroundColor: ['#007bff', '#28a745', '#ffc107'],
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+        },
+      }
+    }
+  });
+}
+
+function mostrarGraficaGenero() {
+  const canvas = document.getElementById('graficaGenero');
+  if (!canvas) return;
+
+  const conteoGenero = {};
+
+  registrosSimulados.forEach(r => {
+    const genero = r.genero || 'No especificado';
+    conteoGenero[genero] = (conteoGenero[genero] || 0) + 1;
+  });
+
+  const labels = Object.keys(conteoGenero);
+  const datos = Object.values(conteoGenero);
+
+  if (graficoGenero) graficoGenero.destroy();
+
+  graficoGenero = new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Registros por género',
+        data: datos,
+        backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0'],
+        borderColor: ['#2b7fc2', '#cc4c6b', '#d4ae3c', '#379e9e'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false
+        },
+        title: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          precision: 0,
+          title: {
+            display: true,
+            text: 'Cantidad de registros'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Género'
+          }
+        }
+      }
+    }
+  });
+}
+
+// Configuración de los botones tipo collapse de bootstrap para que se oculte el anterior
+document.addEventListener('DOMContentLoaded', function () {
+  // Selecciona todos los botones que abren colapsables
+  const botones = document.querySelectorAll('[data-bs-toggle="collapse"]');
+
+  botones.forEach(boton => {
+    boton.addEventListener('click', function () {
+      const targetId = boton.getAttribute('data-bs-target');
+
+      // Oculta todos los colapsables excepto el que fue clickeado
+      document.querySelectorAll('.collapse').forEach(colapso => {
+        if (colapso.id !== targetId.replace('#', '')) {
+          const instancia = bootstrap.Collapse.getInstance(colapso);
+          if (instancia) {
+            instancia.hide();
+          } else {
+            new bootstrap.Collapse(colapso, { toggle: false }).hide();
+          }
+        }
+      });
+    });
+  });
+});
+
+function actualizarContador() {
+  const contador = document.getElementById('contadorValor');
+  if (contador) {
+    contador.textContent = registrosSimulados.length;
+  }
+}
+
+>>>>>>> de835a3 (Contador actualizado)

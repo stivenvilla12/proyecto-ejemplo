@@ -318,3 +318,89 @@ body {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
     }
 
+<<<<<<< HEAD
+=======
+.tabla-registros{
+  background-color: rgb(136, 188, 236); /* Color de fondo del recuadro */
+  color: rgb(255, 255, 255);             /* Color del texto (opcional) */
+  border-radius: 10px;       /* Radio de los bordes para redondearlos */
+  padding: 15px;             /* Espacio entre el texto y el borde */
+  margin-top: 20px;
+  margin-bottom: 20px;      /* Espacio debajo del recuadro (opcional) */
+  text-align: justify;       /* Alineación del texto dentro del recuadro (opcional) */
+  transition: transform 0.3s ease-in-out; /* Define la propiedad a animar y la duración */
+}
+
+.tabla-registros:hover {
+  transform: scale(1.05); /* Escala el elemento al 110% de su tamaño original */
+  background-color: rgb(4, 89, 169); /* Color de fondo del recuadro */
+
+}
+
+.botones-graficas{
+  border-radius: 10px;       /* Radio de los bordes para redondearlos */
+  margin-top: 20px;
+  align-content: center;
+  background-color: #ffe1c9;
+  padding: 15px;
+}
+
+.grafico-pequeno {
+  max-width: 1000px;
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+.contador-icono {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  font-weight: bold;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.contador-icono {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  gap: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contador-texto {
+  text-align: center;
+  line-height: 1;
+}
+
+#contadorValor {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+.contador-texto small {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.contador-icono img {
+  width: 24px;
+  height: 24px;
+}
+>>>>>>> de835a3 (Contador actualizado)
