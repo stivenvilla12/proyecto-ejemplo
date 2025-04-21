@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./static/estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="./imagenes/Un_logo_moderno_-removebg-preview.PNG" type="image/png">
+    <!-- Libreria para gráficas-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   </head>
   <body>
@@ -27,16 +29,22 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                       <li class="nav-item">
+                        <span id="clima" class="nav-link">p
+                            <img id="clima-icono" src="" alt="Ícono del clima" width="30" height="30">
+                            Cargando clima...
+                        </span>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link" href="index.html">Inicio</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Ruta del Emprendedor</a>
+                        <a class="nav-link" href="ruta-del-emprendedor.html">Ruta del Emprendedor</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Red Emprende</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Contactos</a>
+                        <a class="nav-link" href="contacto.html">Contactos</a>
                       </li>
                     </ul>
                   </div>
@@ -236,48 +244,28 @@
                   <option value="otro">Otro</option>
                   </select>
               </div>
-              <div class="col-md-3">
-                <label for="genero">Nombre de tu emprendimiento:</label>
-                <input class="form-control" placeholder="Nombre del emprendimiento" id="emprendimiento" required></div>
-              <div class="col-md-3">
-                <label for="fecha">Fecha de creación:</label>
-                <input type="date" class="form-control" id="fecha" required></div>
-              
-              <div class="col-md-3">
-                <label for="departamento">¿En cuál departamento estás?</label>
-                <select class="form-select" id="departamento" required>
-                <option value="masculino">Risaralda</option>
-                <option value="femenino">Caldas</option>
-                <option value="otro">Quindío</option>
-                </select>
+              <div class="col-md-3">                                
+                  <select id="ciudad" class="form-select" required></select>
               </div>
       
               <!-- Datos requeridos para llevar al servidor-->
-              <div class="col-md-3">
-                <label for="movil">Tu teléfono de contacto</label>
-                <input id="movil" class="form-control" placeholder="Móvil" required></div>
-              <div class="col-md-3">
-                <label for="mail">Correo electrónico</label>
-                <input id="mail" type="email" class="form-control" placeholder="Email" required></div>
-              <div class="col-md-3">
-                <label for="sitioweb">Tu sitio web o linktree</label>
-                <input id="sitioweb" class="form-control" placeholder="Sitio web" required></div>
+              <div class="col-md-3"><input id="movil" class="form-control" placeholder="Móvil" required></div>
+              <div class="col-md-3"><input id="mail" type="email" class="form-control" placeholder="Email" required></div>
+              <div class="col-md-3"><input id="salario" type="number" class="form-control" placeholder="Salario" required></div>
               
               <!-- Botón para Enviar los datos del formulario a JS y posteriormente al servidor -->
               <div class="col-md-6">
-                  <button class="btn btn-success w-100" type="submit">Enviar registro</button> <!-- w ancho 100% del div-->
+                  <button class="btn btn-success w-100" type="submit">Guardar</button> <!-- w ancho 100% del div-->
               </div>
-      
               <!-- botón para limpiar el formulario -->
               <div class="col-md-6">
                   <button class="btn btn-secondary w-100" type="button" onclick="limpiar()">Cancelar</button>
               </div>
           </form>
             
-            <div class="tabla-registros">
-            <h1>Empredimientos registrados</h1>
+            <h2>Registros Simulados (localStorage)</h2>
             <ul id="listaDeRegistros"></ul>
-            </div>
+            
             <button id="limpiarRegistros">Limpiar Registros (localStorage)</button>
           
           </div>
@@ -287,38 +275,31 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
     </script>
-    <!--este es el contador para enlazar con el reguistro-->
-    <script>
-      let contador = 0;
-      function incrementarContador() {
-        contador++;
-        document.getElementById("contador").innerText = contador;
-      }
-    </script>
-    <footer class="footer bg-dark text-white pt-4 pb-2 mt-5">
-      <div class="container text-center">
-        <!-- Mapa del sitio -->
-        <div class="mb-3">
-          <a href="#" class="footer-link">Inicio</a> |
-          <a href="#" class="footer-link">Nosotros</a> |
-          <a href="#" class="footer-link">Servicios</a> |
-          <a href="#" class="footer-link">Contacto</a>
-        </div>
-    
-        <!-- Redes sociales -->
-        <div class="mb-3">
-          <a href="#" target="_blank" class="footer-icon"><i class="bi bi-facebook"></i></a>
-          <a href="#" target="_blank" class="footer-icon"><i class="bi bi-instagram"></i></a>
-          <a href="#" target="_blank" class="footer-icon"><i class="bi bi-youtube"></i></a>
-        </div>
-    
-        <!-- Contacto -->
-        <p>Contáctanos: <a href="mailto:info@ejemprende.com" class="text-white">info@ejemprende.com</a></p>
-    
-        <!-- Derechos -->
-        <p class="mb-0">&copy; 2025 EJEMPRENDE. Todos los derechos reservados.</p>
-      </div>
-    </footer>
+
+<footer class="footer bg-dark text-white pt-4 pb-2 mt-5">
+  <div class="container text-center">
+    Mapa del sitio
+    <div class="mb-3">
+      <a href="./index.html" class="footer-link">Inicio</a> |
+      <a href="./ruta-del-emprendedor.html" class="footer-link">Ruta del Emprendedor</a> |
+      <a href="./red-emprende.html" class="footer-link">Red del Emprende</a> |
+      <a href="./contacto.html" class="footer-link">Contacto</a>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="mb-3 center">
+      <a href="#" target="_blank" class="footer-icon"><i class="bi bi-facebook"></i></a>
+      <a href="#" target="_blank" class="footer-icon"><i class="bi bi-instagram"></i></a>
+      <a href="#" target="_blank" class="footer-icon"><i class="bi bi-youtube"></i></a>
+    </div>
+
+    <!-- Contacto -->
+    <p>Contáctanos: <a href="mailto:info@ejemprende.com" class="text-white">info@ejemprende.com</a></p>
+
+    <!-- Derechos -->
+    <p class="mb-0">&copy; 2025 EJEMPRENDE. Todos los derechos reservados.</p>
+  </div>
+</footer>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
@@ -351,9 +332,9 @@
         }
     </script>
     
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="./static/scripts.js"></script> <!-- Enlazando el archivo JavaScript -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="static/scritps.js"></script>
 
   </body>
 </html>
