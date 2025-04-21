@@ -299,10 +299,30 @@
             </table>            
             </div>
             <button id="limpiarRegistros">Limpiar Registros</button>
-            <div class="grafico mt-5">
-              <h2>Distribución por departamento</h2>
-              <canvas id="graficaPastel" width="400" height="400"></canvas>
+            <div class="botones-graficas">
+            <p style="text-align: center";>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDepartamentos" aria-expanded="false" aria-controls="collapseDepartamentos">
+                Ver distribución por departamentos
+              </button>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGenero" aria-expanded="false" aria-controls="collapseGenero">
+                Ver distribución por género
+              </button>
+            </p>
+            <div class="collapse" id="collapseDepartamentos">
+              <div class="card card-body">
+                  <div class="grafico mt-5 grafico-pequeno">
+                    <h2>Distribución por departamento</h2>
+                  <canvas id="graficaPastel" width="400" height="400"></canvas>
+                  </div>
+              </div>
             </div>
+            <div class="collapse" id="collapseGenero">
+              <div class="grafica-genero-container grafico-pequeno" style="margin-top: 40px;">
+                <h2>Distribución de registros por género</h2>
+                <canvas id="graficaGenero" width="400" height="200"></canvas>
+              </div>
+            </div>
+          </div>
           </div>
 
           </div>

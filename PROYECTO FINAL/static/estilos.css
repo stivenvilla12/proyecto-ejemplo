@@ -334,3 +334,16 @@ body {
   background-color: rgb(4, 89, 169); /* Color de fondo del recuadro */
 
 }
+
+.botones-graficas{
+  border-radius: 10px;       /* Radio de los bordes para redondearlos */
+  margin-top: 20px;
+  align-content: center;
+  background-color: #ffe1c9;
+  padding: 15px;
+}
+
+.grafico-pequeno {
+  max-width: 1000px;
+  margin: 0 auto; /* Centra horizontalmente */
+}
