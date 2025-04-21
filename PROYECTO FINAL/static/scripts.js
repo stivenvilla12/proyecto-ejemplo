@@ -1,3 +1,5 @@
+let graficoPastel = null; // Guardará la instancia del gráfico de pastel que se muestra en la página de la red
+
 // Removed invalid HTML and comments from JavaScript file
     let contador = 0;
     function incrementarContador() {
@@ -167,7 +169,13 @@ function mostrarRegistrosSimulados() {
       cuerpoTabla.appendChild(fila);
     });
   }
+  try {
+    mostrarGraficaPastel();
+  } catch (error) {
+    console.error("Error al generar la gráfica:", error);
+  }
 }
+
 
 
 // Opcional: Botón para limpiar los registros de localStorage (para pruebas)
@@ -178,5 +186,39 @@ if (limpiarRegistrosBtn) {
     registrosSimulados = [];
     mostrarRegistrosSimulados();
     console.log("localStorage de registros limpiado.");
+  });
+}
+
+function mostrarGraficaPastel() {
+  const canvas = document.getElementById('graficaPastel');
+  if (!canvas) return;
+
+  const conteo = {};
+  registrosSimulados.forEach(r => {
+    conteo[r.departamento] = (conteo[r.departamento] || 0) + 1;
+  });
+
+  const labels = Object.keys(conteo);
+  const datos = Object.values(conteo);
+
+  if (graficoPastel) graficoPastel.destroy();
+
+  graficoPastel = new Chart(canvas, {
+    type: 'pie',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: datos,
+        backgroundColor: ['#007bff', '#28a745', '#ffc107'],
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+        },
+      }
+    }
   });
 }

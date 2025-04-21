@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./static/estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="./imagenes/Un_logo_moderno_-removebg-preview.PNG" type="image/png">
+    <!-- Libreria para gráficas-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   </head>
   <body>
@@ -252,9 +254,9 @@
               <div class="col-md-3">                                
                 <label for="departamento">¿En cuál departamento estás?</label>
                 <select class="form-select" id="departamento" required>
-                <option value="masculino">Risaralda</option>
-                <option value="femenino">Caldas</option>
-                <option value="otro">Quindío</option>
+                <option value="Risaralda">Risaralda</option>
+                <option value="Caldas">Caldas</option>
+                <option value="Quindío">Quindío</option>
                 </select>
               </div>
       
@@ -281,7 +283,7 @@
           </form>
             
             <div class="table-responsive">
-            <h1>Empredimientos registrados</h1>
+            <h2>Empredimientos registrados</h2>
             <table class="table table-bordered table-striped" id="tablaDeRegistros">
               <thead class="table-dark">
                 <tr>
@@ -297,7 +299,10 @@
             </table>            
             </div>
             <button id="limpiarRegistros">Limpiar Registros</button>
-          
+            <div class="grafico mt-5">
+              <h2>Distribución por departamento</h2>
+              <canvas id="graficaPastel" width="400" height="400"></canvas>
+            </div>
           </div>
 
           </div>
