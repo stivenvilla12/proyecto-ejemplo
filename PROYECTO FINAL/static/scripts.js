@@ -47,25 +47,38 @@ function obtenerClima() {
         .then(data => {
           const ciudad = data.location.name;
           const temperatura = Math.round(data.current.temp_c);
-          const descripcion = data.current.condition.text; // Estado del clima
-          const icono = data.current.condition.icon; // Viene con prefijo //cdn...
-          const esDia = data.current.is_day; // 1 = día, 0 = noche
+          const descripcion = data.current.condition.text;
+          const icono = data.current.condition.icon;
+          const esDia = data.current.is_day;
           const momentoDelDia = esDia ? 'Día' : 'Noche';
 
-          document.getElementById('clima').innerHTML = `
-            <span>${ciudad}: ${temperatura}°C</span>
-            <img src="https:${icono}" alt="${descripcion}" class="icono-clima">
-            <span>${momentoDelDia} ${descripcion}</span>
-          `;
+          const climaElement = document.getElementById('clima');
+          const iconoClimaElement = document.getElementById('clima-icono');
+
+          if (climaElement && iconoClimaElement) {
+            climaElement.firstChild.textContent = `${ciudad}: ${temperatura}°C `; // Actualiza el texto antes de la imagen
+            iconoClimaElement.src = `https:${icono}`; // Actualiza la fuente de la imagen existente
+            iconoClimaElement.alt = descripcion; // Actualiza el texto alternativo de la imagen
+            climaElement.lastChild.textContent = ` ${momentoDelDia} ${descripcion}`; // Actualiza el texto después de la imagen
+          } else {
+            console.error("No se encontraron los elementos con IDs 'clima' o 'clima-icono'");
+          }
         })
         .catch(error => {
-          document.getElementById('clima').classList.add('error');
-          document.getElementById('clima').innerText = 'Error al obtener el clima';
+          const climaElement = document.getElementById('clima');
+          if (climaElement) {
+            climaElement.classList.add('error');
+            climaElement.innerText = 'Error al obtener el clima';
+          }
+          console.error("Error al obtener el clima:", error);
         });
     });
   } else {
-    document.getElementById('clima').classList.add('error');
-    document.getElementById('clima').innerText = 'Geolocalización no disponible';
+    const climaElement = document.getElementById('clima');
+    if (climaElement) {
+      climaElement.classList.add('error');
+      climaElement.innerText = 'Geolocalización no disponible';
+    }
   }
 }
 
@@ -136,16 +149,26 @@ document.getElementById('registroForm').addEventListener('submit', function(even
 
 // Función para mostrar los registros simulados en la página
 function mostrarRegistrosSimulados() {
-  const listaRegistros = document.getElementById('listaDeRegistros');
-  if (listaRegistros) {
-    listaRegistros.innerHTML = '';
+  const cuerpoTabla = document.getElementById('cuerpoTablaDeRegistros');
+  if (cuerpoTabla) {
+    cuerpoTabla.innerHTML = ''; // Limpia antes de volver a mostrar
     registrosSimulados.forEach(registro => {
-      const listItem = document.createElement('li');
-      listItem.textContent = `Emprendedor/a: ${registro.emprendedor}, Emprendimiento: ${registro.emprendimiento}, Departamento: ${registro.departamento}, Contacto: ${registro.movil}, Sitio web: ${registro.sitioWeb} ,Registrado el: ${registro.fechaRegistro}`;
-      listaRegistros.appendChild(listItem);
+      const fila = document.createElement('tr');
+
+      fila.innerHTML = `
+        <td>${registro.emprendedor}</td>
+        <td>${registro.emprendimiento}</td>
+        <td>${registro.departamento}</td>
+        <td>${registro.movil}</td>
+        <td><a href="${registro.sitioWeb}" target="_blank">${registro.sitioWeb}</a></td>
+        <td>${registro.fechaRegistro}</td>
+      `;
+
+      cuerpoTabla.appendChild(fila);
     });
   }
 }
+
 
 // Opcional: Botón para limpiar los registros de localStorage (para pruebas)
 const limpiarRegistrosBtn = document.getElementById('limpiarRegistros');
