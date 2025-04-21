@@ -1,0 +1,297 @@
+<!--iNCLUYE LOS ARCHIVOS CSS Y JS DE BOOTSTRAP-->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EJEMPRENDE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./static/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="./imagenes/Un_logo_moderno_-removebg-preview.PNG" type="image/png">
+
+  </head>
+  <body>
+    <header>
+        <div class="container"><!--Acà insertamos el còdigo navnar de bootstrap-->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="./imagenes/Un_logo_moderno_-removebg-preview.PNG" alt="Logo" width="60" height="40" class="me-2">
+                    <span class="titulo-proyecto">EJEMPRENDE</span>
+                </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <!-- Aquí agregamos el clima -->
+                      <li class="nav-item">
+                        <span id="clima" class="nav-link">
+                            <img id="clima-icono" src="" alt="Ícono del clima" width="30" height="30">
+                            Cargando clima...
+                        </span>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./ruta-del-emprendedor.html">Ruta del Emprendedor</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./red-emprende.html">Red Emprende</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </header>
+        <!--Carrusel de fotos.-->
+    <section class="carrusel">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./imagenes/0fcf5278500203.5ca6518eb61f8.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>SALENTO, QUINDIO</h5>
+                  <p>by: Andrea Salamanca</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/543a3868893325.5b6cc37a879c5.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>FILANDIA, QUINDIO</h5>
+                  <p>by: Julio César Sandoval Bernal.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/EL-PEREIRANO-WEB37-2.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>PEREIRA, RISARALDA</h5>
+                  <p>by: el pereirano</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/cual-es-la-mejor-epoca-para-ir-al-eje-cafetero-1024x768.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>EJECAFETERO COLOMBIANO</h5>
+                  <p>by: El Tiempo</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/marsella-turismo-yuo-min.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>MARSELLA, RISARALDA</h5>
+                  <p>by: colombiabacana.com</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+    </section>
+    <!-- Fin del carrusel -->
+    <section class="informacion my-5">
+      <!--<h2 class="text-center my-5">INFORMACIÓN SOBRE EMPRENDIMIENTO</h2>
+      <div class="container">
+        <!-Pestañas -->
+        <ul class="nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-nosotros-tab" data-bs-toggle="pill" href="#pills-nosotros" role="tab" aria-controls="pills-nosotros" aria-selected="true">Nosotros</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-contactanos-tab" data-bs-toggle="pill" href="#pills-contactanos" role="tab" aria-controls="pills-contactanos" aria-selected="false">Contáctanos</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-porque-tab" data-bs-toggle="pill" href="#pills-porque" role="tab" aria-controls="pills-porque" aria-selected="false">....</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-contador-tab" data-bs-toggle="pill" href="#pills-contador" role="tab" aria-controls="pills-contador" aria-selected="false">...</a>
+          </li>
+        </ul>
+    
+        <div class="tab-content" id="pills-tabContent">
+    
+          <!-- Qué es la red -->
+          <div class="tab-pane fade show active" id="pills-nosotros" role="tabpanel" aria-labelledby="pills-nosotros-tab">
+            <div class="row align-items-center mt-4">
+              <div class="col-md-6">
+                <p>🌟 <strong>¡Haz parte de la red que conecta los emprendimientos del eje cafetero!</strong>
+                <p></p>
+              </div>
+              <div class="col-md-6 text-center">
+                <img src="./imagenes/IMAGEN-1.JPEG" alt="Descripción" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+    
+          <!-- Testimonios -->
+          <div class="tab-pane fade" id="pills-contactanos" role="tabpanel" aria-labelledby="pills-contactanos-tab">
+            <div class="accordion" id="accordionExample">
+                <div class="container">
+                    <h2 class="text-center my-5">Contáctanos</h2>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <form action="enviar_correo.php" method="POST">
+                          <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="correo" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="correo" name="correo" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                          </div>
+                          <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="col-md-6">
+                        <h4>Información de Contacto</h4>
+                        <p><strong>Dirección:</strong> Calle Ficticia #123, Ciudad, País</p>
+                        <p><strong>Teléfono:</strong> +123 456 7890</p>
+                        <p><strong>Correo:</strong> info@ejemprende.com</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+    
+    <footer class="footer bg-dark text-white pt-4 pb-2 mt-5">
+      <div class="container text-center">
+        <!-- Mapa del sitio -->
+        <div class="mb-3">
+            <a href="./index.html" class="footer-link">Inicio</a> |
+            <a href="./ruta-del-emprendedor.html" class="footer-link">Ruta del Emprendedor</a> |
+            <a href="./red-emprende.html" class="footer-link">Red del Emprende</a> |
+            <a href="./contacto.html" class="footer-link">Contacto</a>
+        </div>
+    
+        <!-- Redes sociales -->
+        <div class="mb-3">
+          <a href="#" target="_blank" class="footer-icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" target="_blank" class="footer-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" target="_blank" class="footer-icon"><i class="bi bi-youtube"></i></a>
+        </div>
+    
+        <!-- Contacto -->
+        <p>Contáctanos: <a href="mailto:info@ejemprende.com" class="text-white">info@ejemprende.com</a></p>
+    
+        <!-- Derechos -->
+        <p class="mb-0">&copy; 2025 EJEMPRENDE. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js">
+    </script>
+
+    <script>
+      AOS.init({
+        duration: 1000, // Duración de la animación en milisegundos
+        once: true,     // Se ejecuta solo una vez
+      });
+    </script>
+
+    <script>
+      const cantidadDeLogos = 35; // Cambia este número para más o menos logos
+      const contenedor = document.body;
+    
+        for (let i = 0; i < cantidadDeLogos; i++) {
+          const logo = document.createElement("img");
+          logo.src = "./imagenes/Un_logo_moderno_-removebg-preview.PNG"; // Cambia al path correcto
+          logo.classList.add("fondo-logo");
+          
+          // Posición aleatoria
+          logo.style.top = Math.random() * 100 + "%";
+          logo.style.left = Math.random() * 100 + "%";
+      
+          // Tamaño aleatorio (entre 40px y 100px)
+          const size = Math.floor(Math.random() * 60) + 40;
+          logo.style.width = size + "px";
+      
+          // Rotación aleatoria
+          const rotacion = Math.floor(Math.random() * 360);
+          logo.style.transform = `rotate(${rotacion}deg)`;
+      
+          contenedor.appendChild(logo);
+        }
+    </script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Script para obtener el clima -->
+    <script>
+        // Función para obtener la ubicación del usuario
+        function obtenerClima() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (posicion) {
+                    var lat = posicion.coords.latitude;
+                    var lon = posicion.coords.longitude;
+    
+                    // Usar la API de OpenWeatherMap para obtener el clima
+                    var apiKey = '34c8b6756990af0605f1048d7488d3e9'; // Tu clave de API
+                    var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&lang=es&units=metric`;
+    
+                    fetch(url)
+                        .then(response => response.json())
+                        .then(data => {
+                            var temperatura = Math.round(data.main.temp);  // Redondear la temperatura a entero
+                            var ciudad = data.name;
+                            var climaDescripcion = data.weather[0].description;
+                            var iconoClima = data.weather[0].icon; // Obtener el código del icono
+    
+                            // Mostrar el ícono y la temperatura en el navbar
+                            document.getElementById('clima').innerHTML = `
+                              ${ciudad}: ${temperatura}°C - ${climaDescripcion.charAt(0).toUpperCase() + climaDescripcion.slice(1)}
+                              <img src="https://openweathermap.org/img/wn/${iconoClima}.png" alt="${climaDescripcion}" class="icono-clima">`;
+                        })
+                        .catch(error => {
+                            document.getElementById('clima').innerHTML = 'Error al obtener el clima';
+                            // Agregar clase para resaltar el error
+                            document.getElementById('clima').classList.add('error');
+                        });
+                });
+            } else {
+                document.getElementById('clima').innerHTML = 'Geolocalización no disponible';
+                // Agregar clase para resaltar el error
+                document.getElementById('clima').classList.add('error');
+            }
+        }
+    
+        // Llamar la función al cargar la página
+        window.onload = obtenerClima;
+    </script>
+
+  </body>
+</html>

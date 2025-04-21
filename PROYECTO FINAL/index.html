@@ -14,7 +14,8 @@
   </head>
   <body>
     <header>
-        <div class="container"><!--Acà insertamos el còdigo navnar de bootstrap-->
+
+        <div class="container"><!--Acà insertamos el còdigo navbar de bootstrap-->
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
                   <a class="navbar-brand d-flex align-items-center" href="#">
@@ -26,17 +27,24 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <!-- Aquí agregamos el clima -->
+                      <li class="nav-item">
+                        <span id="clima" class="nav-link">p
+                            <img id="clima-icono" src="" alt="Ícono del clima" width="30" height="30">
+                            Cargando clima...
+                        </span>
+                      </li>
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Ruta del Emprendedor</a>
+                        <a class="nav-link" href="./ruta-del-emprendedor.html">Ruta del Emprendedor</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Red Emprende</a>
+                        <a class="nav-link" href="./red-emprende.html">Red Emprende</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Contactos</a>
+                        <a class="nav-link" href="./contacto.html">Contactos</a>
                       </li>
                     </ul>
                   </div>
@@ -54,6 +62,7 @@
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -91,6 +100,13 @@
                   <p>by: colombiabacana.com</p>
                 </div>
               </div>
+              <div class="carousel-item">
+                <img src="./imagenes/pueblos_eje_cafetero_valle_cocora_2.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>VALLE DEL COCORA</h5>
+                  <p>by: trayectoriasenviaje.com</p>
+                </div>
+              </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -103,25 +119,13 @@
           </div>
         </div>
     </section>
-    <!-- con la clase nosotros.-->
-    <!--<section class="nosotros my-5">
-        <h2 class="text-center my-5">DESCRIPCIÓN</h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius eaque accusamus quaerat a beatae nemo, quasi illo, inventore nostrum, magnam maxime totam ullam! Excepturi dicta laborum assumenda omnis doloribus sint.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, autem debitis quod vitae sint doloribus officiis atque repellat iure, alias ex laudantium. Accusamus assumenda delectus deleniti dolores iste adipisci atque.</p>
-                </div>
-                <div class="col-6">
-                    <img class="img-fluid" src="https://picsum.photos/id/800/600/300" alt="">
-                </div>
-            </div>
-        </div>
-    </section>-->
+    
+
     <section class="informacion my-5">
       <!--<h2 class="text-center my-5">INFORMACIÓN SOBRE EMPRENDIMIENTO</h2>
       <div class="container">
         <!-Pestañas -->
+        
         <ul class="nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
             <a class="nav-link active" id="pills-descripcion-tab" data-bs-toggle="pill" href="#pills-descripcion" role="tab" aria-controls="pills-descripcion" aria-selected="true">Descripción</a>
@@ -149,7 +153,7 @@
                 <p>🌟 <strong>¡Ejemprende!</strong> El espacio donde los sueños del Eje Cafetero se hacen visibles 🚀</p>
                 <p>Bienvenido a <strong>Ejemprende</strong>, la plataforma que nace para <strong>impulsar, visibilizar y conectar</strong> los emprendimientos del corazón del Eje Cafetero colombiano.</p>
                 <p>Celebramos las ideas que nacen en nuestras montañas, los negocios con alma cafetera y el esfuerzo de quienes cada día trabajan por hacer realidad sus proyectos.</p>
-                <p>🌿 Porque en el Eje no solo cultivamos café… <em>cultivamos ideas, esfuerzo y progreso</em>.</p>
+                <p>🌿 Porque en el Eje no solo cultivamos café… <em><strong>cultivamos ideas, esfuerzo y progreso</strong></em>.</p>
                 <p>📢 ¡Conoce, apoya y comparte los emprendimientos de tu región!</p>
                 <p>💼 Si eres emprendedor, este es tu escenario. Si sueñas con serlo, este es tu punto de partida.</p>
               </div>
@@ -202,7 +206,7 @@
               <button class="btn btn-primary" onclick="incrementarContador()">Incrementar Contador</button>
             </div>
           </div>
-        
+
           <!-- Formulario -->
           <div class="tab-pane fade" id="pills-formulario" role="tabpanel" aria-labelledby="pills-formulario-tab">
             <div class="text-center my-4">
@@ -212,139 +216,23 @@
                     <a href="./formulario.html">
                       <button class="btn btn-primary" onclick="incrementarContador()">Formulario</button>
                     </a>
-                  
-                  </a>
               </ul>
             </div>
-            <div class="tab-pane fade" id="pills-formulario" role="tabpanel" aria-labelledby="pills-formulario-tab">
-              <div class="text-center my-4">
-                  <h3>Formulario de Habilidades</h3>
-                  <ul class="nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
-                      <li class="nav-item" role="presentation">
-                          <!-- Botón que activará la carga del formulario -->
-                          <button class="btn btn-primary" onclick="cargarFormulario()">Formulario</button>
-                      </li>
-                  </ul>
-              </div>
-              <!-- Aquí se cargará el contenido de formulario.html -->
-              <!--<div id="./formulario.html" class="my-4 d-flex justify-content-center">
-                  <script>
-                    function cargarFormulario() {
-                        // Usamos fetch para cargar el archivo HTML
-                        fetch('./formulario.html')
-                            .then(response => response.text())  // Convertimos la respuesta en texto
-                            .then(data => {
-                                // Colocamos el contenido del formulario en el div
-                                document.getElementById('./formulario.html').innerHTML = data;
-                            })
-                            .catch(error => {
-                                // Si ocurre un error al cargar el archivo
-                                console.error('Error al cargar el formulario:', error);
-                            });
-                    }
-                </script>
-              </div>-->
           </div>
         </div>
       </div>
     </section>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
-    </script>
-    <!--este es el contador para enlazar con el reguistro-->
-    <script>
-      let contador = 0;
-      function incrementarContador() {
-        contador++;
-        document.getElementById("contador").innerText = contador;
-      }
-    </script>
+
     <footer class="footer bg-dark text-white pt-4 pb-2 mt-5">
       <div class="container text-center">
-        Mapa del sitio 
+        Mapa del sitio
         <div class="mb-3">
-          <a href="#" class="footer-link">Inicio</a> |
-          <a href="#" class="footer-link">Nosotros</a> |
-          <a href="#" class="footer-link">Servicios</a> |
-          <a href="#" class="footer-link">Contacto</a>
+          <a href="./index.html" class="footer-link">Inicio</a> |
+          <a href="./ruta-del-emprendedor.html" class="footer-link">Ruta del Emprendedor</a> |
+          <a href="./red-emprende.html" class="footer-link">Red del Emprende</a> |
+          <a href="./contacto.html" class="footer-link">Contacto</a>
         </div>
-        <!-- Mapa del Sitio Web -->
-        <section class="py-5 mt-5">
-          <div class="container">
-            <h3 class="text-center mb-4">Mapa del Sitio</h3>
-            <div class="row">
-              <div class="col-md-3">
-                <h5>Inicio</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#">Bienvenida</a></li>
-                  <li><a href="#carouselExampleCaptions">Carrusel</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h5>Ruta del Emprendedor</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#pills-descripcion">Descripción</a></li>
-                  <li><a href="#pills-definiciones">Definiciones</a></li>
-                  <li><a href="#pills-porque">Por qué Emprender</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h5>Red Emprende</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#pills-contador">Contador de Emprendimientos</a></li>
-                  <li><a href="#pills-formulario">Formulario de Habilidades</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h5>Contactos</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#">Formulario de contacto</a></li>
-                  <li><a href="#">Redes sociales</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        <!-- Mapa del Sitio Web -->
-        <!--<section class="bg-light py-5 mt-5 center">
-          <div class="container">
-            <h3 class="text-center mb-4">Mapa del Sitio</h3>
-            <div class="row">
-              <div class="col-md-3">
-                <h5>Inicio</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#">Bienvenida</a></li>
-                  <li><a href="#carouselExampleCaptions">Carrusel</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h5>Ruta del Emprendedor</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#pills-descripcion">Descripción</a></li>
-                  <li><a href="#pills-definiciones">Definiciones</a></li>
-                  <li><a href="#pills-porque">Por qué Emprender</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h5>Red Emprende</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#pills-contador">Contador de Emprendimientos</a></li>
-                  <li><a href="#pills-formulario">Formulario de Habilidades</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h5>Contactos</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#">Formulario de contacto</a></li>
-                  <li><a href="#">Redes sociales</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>-->
-
-    
         <!-- Redes sociales -->
         <div class="mb-3 center">
           <a href="#" target="_blank" class="footer-icon"><i class="bi bi-facebook"></i></a>
@@ -360,40 +248,8 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000, // Duración de la animación en milisegundos
-        once: true,     // Se ejecuta solo una vez
-      });
-    </script>
-    <script>
-      const cantidadDeLogos = 35; // Cambia este número para más o menos logos
-      const contenedor = document.body;
-    
-        for (let i = 0; i < cantidadDeLogos; i++) {
-          const logo = document.createElement("img");
-          logo.src = "./imagenes/Un_logo_moderno_-removebg-preview.PNG"; // Cambia al path correcto
-          logo.classList.add("fondo-logo");
-          
-          // Posición aleatoria
-          logo.style.top = Math.random() * 100 + "%";
-          logo.style.left = Math.random() * 100 + "%";
-      
-          // Tamaño aleatorio (entre 40px y 100px)
-          const size = Math.floor(Math.random() * 60) + 40;
-          logo.style.width = size + "px";
-      
-          // Rotación aleatoria
-          const rotacion = Math.floor(Math.random() * 360);
-          logo.style.transform = `rotate(${rotacion}deg)`;
-      
-          contenedor.appendChild(logo);
-        }
-    </script>
-    
+    <script src="./static/scripts.js"></script> <!-- Enlazando el archivo JavaScript -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  
-
+    
   </body>
 </html>

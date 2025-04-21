@@ -248,4 +248,48 @@ body {
       transform: scale(1.05);
     }
 
+    .imagen-testimonios {
+      display: block; /* Convierte la imagen en un elemento de bloque */
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 50%; /* La imagen no será más ancha que su contenedor padre */
+      height: auto;
+    }
+
     
+
+    /* Estilo para la sección de clima en el navbar */
+    #clima {
+      background-color: rgba(3, 104, 236, 0.192); /* Fondo semi-transparente */
+      color: white; /* Color del texto */
+      font-weight: bold; /* Hacer el texto más prominente */
+      padding: 3px 10px; /* Espaciado interno */
+      border-radius: 8px; /* Bordes redondeados */
+      display: flex; /* Usar flexbox para alinear el texto y el ícono */
+      align-items: center; /* Alinear verticalmente */
+      font-size: 0.7rem; /* Tamaño de fuente adecuado */
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Transición para hover */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    }
+
+    /* Estilo para el ícono del clima */
+    #clima img.icono-clima {
+      width: 25px; /* Aumentamos el tamaño del ícono */
+      height: 25px;
+      margin-left: 10px; /* Espaciado entre el texto y el ícono */
+    }
+
+    /* Efecto al pasar el mouse sobre el clima */
+    #clima:hover {
+      background-color: rgba(236, 67, 0, 0.24); /* Fondo más oscuro cuando se pasa el mouse */
+      transform: scale(1.05); /* Aumentar un poco el tamaño */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    }
+
+    /* Estilo para la sección del clima cuando se muestra un error */
+    #clima.error {
+      background-color: #FF4C4C; /* Fondo rojo para indicar error */
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    }
+
